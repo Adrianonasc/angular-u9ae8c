@@ -1,0 +1,8 @@
+<ejs-grid #gridPlanos id='gridPlanos' [dataSource]='planosDataSouce' allowPaging='false' [pageSettings]='{ pageCount: 50 }'
+ [editSettings]='editSettings' [height]="'250px'" [toolbar]='toolbar1' (actionBegin)='actionBegin($event)'>
+	<e-columns>
+		<e-column field='id' [visible]='false' [isPrimaryKey]='true'></e-column>
+		<e-column field='descricao' headerText="@core.comum.Descricao" [width]="'100%'" [validationRules]="{ required: [ true, '@core.comum.CampoObrigatorio' ] }">
+		</e-column>
+	</e-columns>
+</ejs-grid>
