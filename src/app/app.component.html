@@ -1,8 +1,8 @@
-<ejs-grid #gridPlanos id='gridPlanos' [dataSource]='planosDataSouce' allowPaging='false' [pageSettings]='{ pageCount: 50 }'
- [editSettings]='editSettings' [height]="'250px'" [toolbar]='toolbar1' (actionBegin)='actionBegin($event)'>
+<ejs-grid [dataSource]='dataSource' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' id="gridEndereco"
+	[toolbar]='toolbar' (actionBegin)='actionBegin($event)' [height]="'250px'" (actionComplete)='actionComplete($event)'>
 	<e-columns>
-		<e-column field='id' [visible]='false' [isPrimaryKey]='true'></e-column>
-		<e-column field='descricao' headerText="@core.comum.Descricao" [width]="'100%'" [validationRules]="{ required: [ true, '@core.comum.CampoObrigatorio' ] }">
-		</e-column>
+		<e-column field='id' [isPrimaryKey]='true' [visible]='false'></e-column>
+		<e-column field='parentId' [headerText]="'@core.comum.Municipio-UF'" foreignKeyValue='nome'
+			[dataSource]="dataSourceMunicipio" foreignKeyField='municipioId' width='200' [edit]='dataSourceEdit'></e-column>
 	</e-columns>
 </ejs-grid>
