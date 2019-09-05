@@ -6,7 +6,9 @@ import {
 import { DataManager, Query, ODataV4Adaptor } from '@syncfusion/ej2-data';
 import { Ajax } from '@syncfusion/ej2-base';
 
-export class DirectionAdaptor extends ODataV4Adaptor {
+
+//Hotfix => https://www.syncfusion.com/forums/146633/odata-v4-guids-are-in-the-wrong-format
+export class CustomAdaptor extends ODataV4Adaptor {
 
 	constructor() {
 		super();
@@ -40,21 +42,17 @@ export class AppComponent implements OnInit {
 		params: {
 			allowFiltering: true,
 			query: new Query(),
-			fields: { text: 'nome', value: 'id' },
+			fields: { text: 'Nome', value: 'MunicipioId' },
 		},
 	};
 
-	constructor() {
-		
-	}
+	constructor() {}
 
 	ngOnInit() {
     this.dataSourceMunicipio = new DataManager({
-					url: `http://acm1app.azurewebsites.net/odata/Municipios?$orderby=nome&$select=nome,municipioId,uf`,
-					adaptor: new DirectionAdaptor(),
+					url: `https://acm1app.azurewebsites.net/odata/Municipios?$orderby=nome&$select=nome,municipioId,uf&$top=15`,
+					adaptor: new CustomAdaptor(),
 		});
-    console.log(this.dataSourceMunicipio);
-
   }
 
 	actionBegin(args: any): void {
@@ -67,18 +65,7 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	actionComplete(args: any): void {
-		switch (args.requestType) {
-			case 'beginEdit':
-				//args.dialog.header = `${this.resource.getResource('@direction.ui.grid.editing')} ${this.entityName}`;
-				break;
-			case 'add':
-				//args.dialog.header = `${this.resource.getResource('@direction.ui.grid.new')} ${this.entityName}`;
-				break;
-			default:
-				break;
-		}
+	actionComplete(args: any): void {}
 
-	}
 }
 
