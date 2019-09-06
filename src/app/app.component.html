@@ -1,9 +1,9 @@
 <ejs-grid [dataSource]='dataSource' allowPaging='true' [pageSettings]='pageSettings' [editSettings]='editSettings' id="gridEndereco"
-	[toolbar]='toolbar' (actionBegin)='actionBegin($event)' [height]="'250px'" (actionComplete)='actionComplete($event)'>
+	[toolbar]='toolbar' (actionBegin)='actionBegin($event)' height='250px' (actionComplete)='actionComplete($event)'>
 	<e-columns>
 		<e-column field='id' [isPrimaryKey]='true' [visible]='false'></e-column>
 		<e-column field='parentId' [headerText]="'@core.comum.Municipio-UF'" foreignKeyValue='Nome'
-			[dataSource]="dataSourceMunicipio" foreignKeyField='MunicipioId' width='200' [edit]='dataSourceEdit'>
+			[dataSource]="dataSourceMunicipio" foreignKeyField='MunicipioId' width='200px' [edit]='dataSourceEdit'>
       </e-column>
 	</e-columns>
 </ejs-grid>

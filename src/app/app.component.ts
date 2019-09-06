@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
 	public dataSourceMunicipio: DataManager;
 
 	public editSettings = { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Dialog' };
-	public toolbar = ['Add', 'Edit', 'Delete'];
+	public toolbar = ['Add', 'Edit', 'Delete', 'Update', 'Cancel'];
 	public pageSettings = { pageCount: 50 };
 	public enderecoForm: FormGroup;
 	entityName: string;
