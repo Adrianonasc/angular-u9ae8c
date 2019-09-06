@@ -3,6 +3,7 @@
 	<e-columns>
 		<e-column field='id' [isPrimaryKey]='true' [visible]='false'></e-column>
 		<e-column field='parentId' [headerText]="'@core.comum.Municipio-UF'" foreignKeyValue='Nome'
-			[dataSource]="dataSourceMunicipio" foreignKeyField='MunicipioId' width='200' [edit]='dataSourceEdit'></e-column>
+			[dataSource]="dataSourceMunicipio" foreignKeyField='MunicipioId' width='200' [edit]='dataSourceEdit'>
+      </e-column>
 	</e-columns>
 </ejs-grid>
