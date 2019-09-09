@@ -65,7 +65,9 @@ export class AppComponent implements OnInit {
 		}
 	}
 
-	actionComplete(args: any): void {}
+	actionComplete(args: any): void {
+    console.log(this.dataSource);
+  }
 
 }
 
